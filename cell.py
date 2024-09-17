@@ -39,6 +39,8 @@ class Cell:
         if undo:
             fill_color = "gray"
 
+        if self._x1 is None or self._x2 is None:
+            raise ValueError("Cell coordinates are not set.")
         half_length = abs(self._x2 - self._x1) // 2
         x_center = half_length + self._x1
         y_center = half_length + self._y1
